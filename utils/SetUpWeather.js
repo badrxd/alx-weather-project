@@ -1,3 +1,5 @@
+/*scipt that get the user ip*/
+
 const get_location = async (params) => {
   try {
     const res = await fetch(`${process.env.URL}/api`, {
@@ -16,9 +18,11 @@ const get_location = async (params) => {
   }
 };
 
-const get_weather = async (position) => {
+/*Scipt that get the weather information based on the user ip*/
+
+const get_weather = async (ip) => {
   try {
-    const res = await fetch(`${process.env.URL}/api/${position}`, {
+    const res = await fetch(`${process.env.URL}/api/${ip}`, {
       // cache: "no-store",
       next: { revalidate: 3600 },
     });

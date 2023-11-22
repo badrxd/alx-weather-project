@@ -7,8 +7,8 @@ import NavBar from "@/components/NavBar";
 export default async function Home() {
   let weather = null;
   const location = await get_location();
-  const position = `${location.lat},${location.lon}`;
-  weather = !location?.error ? await get_weather(position) : null;
+  const ip = `${location.lat},${location.lon}`;
+  weather = !location?.error ? await get_weather(ip) : null;
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {location?.error ? (
