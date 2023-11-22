@@ -20,13 +20,13 @@ const get_location = async (params) => {
 
 /*Scipt that get the weather information based on the user ip*/
 
-const get_weather = async (ip) => {
+const get_weather = async (city) => {
   try {
-    const res = await fetch(`${process.env.URL}/api/${ip}`, {
+    const res = await fetch(`${process.env.URL}/api/${city}`, {
       // cache: "no-store",
       next: { revalidate: 3600 },
     });
-    const { weather } = await res.json();
+    const weather = await res.json();
     return weather;
   } catch (error) {
     console.log(error.message);

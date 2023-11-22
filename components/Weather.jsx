@@ -1,11 +1,14 @@
 "use server";
 import React from "react";
 import Image from "next/image";
+import settings from "../settings.json";
+import { getByUnit } from "@/utils/GetByUnits";
 
-async function Weather(weather) {
-  const Weather = await weather.weather;
-  const { location, current, forecast } = await Weather;
-  console.log(Weather);
+async function Weather({ weather, sett_idx }) {
+  const { location, current, forecast } = await weather;
+  const { temp, pres, windS } = await sett_idx;
+  const { temperature } = await settings;
+
   return (
     <section>
       <div>Search</div>
@@ -13,7 +16,10 @@ async function Weather(weather) {
         <div>
           <div>
             <p>{location.name}</p>
-            <p>{current.temp_c}</p>
+            <p>
+              {await getByUnit(current, temperature, temp)}
+              {temperature[temp].symbole}
+            </p>
             <Image
               src={`https:${current.condition.icon}`}
               width={64}
@@ -43,7 +49,12 @@ async function Weather(weather) {
           </div>
           <div>
             Air condition
-            <div></div>
+            <div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
         </div>
         <div>

@@ -1,0 +1,38 @@
+{
+    "temperature": [
+        {
+            "name": "celsius",
+            "pointer": "temp_c",
+            "symbole": "°C"
+        },
+        {
+            "name": "fahrenheit",
+            "pointer": "temp_f",
+            "symbole": "°F"
+        }
+    ],
+    "pressure": [
+        {
+            "name": "mm",
+            "pointer": "precip_mm"
+        },
+        {
+            "name": "mb",
+            "pointer": "pressure_in"
+        },
+        {
+            "name": "inches",
+            "pointer": "precip_mm"
+        }
+    ],
+    "windSpeed": [
+        {
+            "name": "km/h",
+            "pointer": "wind_kph"
+        },
+        {
+            "name": "m/h",
+            "pointer": "wind_mph"
+        }
+    ]
+}
