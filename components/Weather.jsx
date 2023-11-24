@@ -29,7 +29,6 @@ function Weather() {
           "Loading..."
         ) : weather !== null ? (
           <>
-            {location}
             <Main />
           </>
         ) : null}
