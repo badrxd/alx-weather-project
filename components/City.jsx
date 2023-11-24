@@ -1,7 +1,12 @@
 import React from "react";
+import Search from "@/components/main/Search";
 
 function City() {
-  return <div>City</div>;
+  return (
+    <div>
+      <Search />
+    </div>
+  );
 }
 
 export default City;

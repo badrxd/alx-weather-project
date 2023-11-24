@@ -1,5 +1,5 @@
-const getByUnit = async (obj, unit, index) => {
-  const name = await unit[index].pointer;
+const getByUnit = (obj, unit, index) => {
+  const name = unit[index].pointer;
   return obj[name];
 };
 

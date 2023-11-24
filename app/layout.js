@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Provider from "@/app/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,9 +10,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  if (typeof window !== "undefined") {
+    // Perform localStorage action
+    localStorage.setItem("username", "Anisha");
+  }
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }

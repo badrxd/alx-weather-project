@@ -1,67 +1,40 @@
-"use server";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import settings from "../settings.json";
-import { getByUnit } from "@/utils/GetByUnits";
+import NavBar from "@/components/main/NavBar";
+import Search from "@/components/main/Search";
+import Main from "@/components/main/Main";
+import { useSelector, useDispatch } from "react-redux";
+import { GetWeather } from "@/redux/features/weather";
 
-async function Weather({ weather, sett_idx }) {
-  const { location, current, forecast } = await weather;
-  const { temp, pres, windS } = await sett_idx;
-  const { temperature } = await settings;
+function Weather() {
+  let { location } = useSelector((state) => state.location);
+  let { isLoading, isError, isSucces, weather } = useSelector(
+    (state) => state.weather
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(GetWeather(location));
+  }, [dispatch, location]);
 
   return (
-    <section>
-      <div>Search</div>
+    <>
+      <NavBar />
       <div>
-        <div>
-          <div>
-            <p>{location.name}</p>
-            <p>
-              {await getByUnit(current, temperature, temp)}
-              {temperature[temp].symbole}
-            </p>
-            <Image
-              src={`https:${current.condition.icon}`}
-              width={64}
-              height={64}
-              alt="Picture of the author"
-            />
-          </div>
-          <div>
-            Todays forcast
-            <div>
-              {forecast.forecastday[0].hour.map((e, i) => {
-                return (
-                  <div key={i}>
-                    <p>{e.time}</p>
-                    <Image
-                      src={`https:${e.condition.icon}`}
-                      width={64}
-                      height={64}
-                      alt="Picture of the author"
-                    />
-                    <p>{e.temp_c}</p>
-                    <br />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div>
-            Air condition
-            <div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div>7days forcast</div>
-        </div>
+        <Search />
+        {isError ? (
+          ""
+        ) : isLoading ? (
+          "Loading..."
+        ) : weather !== null ? (
+          <>
+            {location}
+            <Main />
+          </>
+        ) : null}
       </div>
-    </section>
+    </>
   );
 }
 

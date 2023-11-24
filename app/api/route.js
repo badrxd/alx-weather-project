@@ -12,3 +12,5 @@ export async function GET(request) {
     return Response.json({ error: true });
   }
 }
+
+async function create(data) {}
