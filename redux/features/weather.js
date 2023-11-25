@@ -4,7 +4,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   isSucces: false,
-  weather: {},
+  weather: null,
 };
 
 // First, create the thunk
@@ -14,7 +14,6 @@ export const GetWeather = createAsyncThunk(
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/${args}`);
       let weather = await res.json();
-      console.log(weather.location.name);
       return weather;
     } catch (error) {
       console.log(error.message);
@@ -35,7 +34,7 @@ const weatherSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(GetWeather.fulfilled, (state, action) => {
-      state.location = action.payload;
+      state.weather = action.payload;
       state.isLoading = false;
       console.log(action);
     });
