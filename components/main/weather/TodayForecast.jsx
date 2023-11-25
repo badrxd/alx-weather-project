@@ -7,7 +7,6 @@ function TodayForecast({ temperature, weather }) {
   const { temp } = useSelector((store) => store.settings);
   const { location, forecast } = weather;
   let hours = getHours(location.tz_id, forecast.forecastday);
-
   return (
     <div>
       <h2>TodayForecast</h2>

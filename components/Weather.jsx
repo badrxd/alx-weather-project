@@ -3,12 +3,14 @@ import Image from "next/image";
 import settings from "../settings.json";
 import NavBar from "@/components/main/NavBar";
 import Search from "@/components/main/Search";
+import Settings from "@/components/main/Settings";
 import Main from "@/components/main/Main";
 import { useSelector, useDispatch } from "react-redux";
 import { GetWeather } from "@/redux/features/weather";
 
 function Weather() {
   let { location } = useSelector((state) => state.location);
+  let { page } = useSelector((state) => state.settings);
   let { isLoading, isError, isSucces, weather } = useSelector(
     (state) => state.weather
   );
@@ -17,7 +19,6 @@ function Weather() {
   useEffect(() => {
     dispatch(GetWeather(location));
   }, [dispatch, location]);
-
   return (
     <>
       <NavBar />
@@ -29,7 +30,8 @@ function Weather() {
           "Loading..."
         ) : weather !== null ? (
           <>
-            <Main />
+            {page == 0 ? <Main /> : null}
+            {page == 1 ? <Settings /> : null}
           </>
         ) : null}
       </div>

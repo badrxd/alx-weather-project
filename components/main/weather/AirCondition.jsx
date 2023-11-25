@@ -7,8 +7,6 @@ import { useSelector } from "react-redux";
 
 function AirCondition({ day, windSpeed }) {
   const { windS } = useSelector((store) => store.settings);
-
-  console.log(day);
   return (
     <div>
       <div>

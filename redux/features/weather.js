@@ -1,3 +1,5 @@
+// script that get me the weather based on the city
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -7,9 +9,10 @@ const initialState = {
   weather: null,
 };
 
-// First, create the thunk
+// the fetch function that bring to me the weather for city
 export const GetWeather = createAsyncThunk(
   "weather/all",
+  // args: the city
   async (args, thunkAPI) => {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/${args}`);
@@ -22,13 +25,14 @@ export const GetWeather = createAsyncThunk(
   }
 );
 
-// Then, handle actions in your reducers:
+// handle actions
 const weatherSlice = createSlice({
   name: "weather",
   initialState,
-  reducers: {
-    // standard reducer logic, with auto-generated action types per reducer
-  },
+  reducers: {},
+  /*
+    extraReducers : handel the 3 steps of the fetch loading , success and error
+    */
   extraReducers: (builder) => {
     builder.addCase(GetWeather.pending, (state, action) => {
       state.isLoading = true;
@@ -36,7 +40,6 @@ const weatherSlice = createSlice({
     builder.addCase(GetWeather.fulfilled, (state, action) => {
       state.weather = action.payload;
       state.isLoading = false;
-      console.log(action);
     });
     builder.addCase(GetWeather.rejected, (state, action) => {});
   },

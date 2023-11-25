@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["cdn.weatherapi.com"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "cdn.weatherapi.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
   async headers() {
     return [

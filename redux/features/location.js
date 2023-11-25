@@ -1,13 +1,15 @@
+// script that get me the user location when he access to website for the first time
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isLoading: false,
   isError: false,
   isSucces: false,
-  location: "",
+  location: null,
 };
 
-// First, create the thunk
+// the fetch function that bring to me the location
 export const GetLocation = createAsyncThunk(
   "location/city",
   async (args, thunkAPI) => {
@@ -25,31 +27,35 @@ export const GetLocation = createAsyncThunk(
   }
 );
 
-// Then, handle actions in your reducers:
+// handle actions
 const locationSlice = createSlice({
   name: "location",
   initialState,
   reducers: {
+    /*
+    change : the Action (function) that updates the location sent by input
+    action.payload: the location (city)
+    */
     change: (state, action) => {
       state.location = action.payload;
       state.isError = false;
     },
   },
+  /*
+    extraReducers : handel the 3 steps of the fetch loading , success and error
+    */
   extraReducers: (builder) => {
     builder.addCase(GetLocation.pending, (state, action) => {
       state.isLoading = true;
-      console.log(action);
     });
     builder.addCase(GetLocation.fulfilled, (state, action) => {
       state.location = action.payload.city;
       state.isLoading = false;
       state.isError = false;
-      console.log(action);
     });
     builder.addCase(GetLocation.rejected, (state, action) => {
       state.isLoading = false;
       state.isError = true;
-      console.log(action);
     });
   },
 });

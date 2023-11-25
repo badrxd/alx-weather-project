@@ -26,7 +26,7 @@ const getHours = (timeZone, days) => {
   i = Number(date.toLocaleString("en-US", options));
 
   {
-    i > 10 ? (i = i * 10) / 10 : null;
+    i > 10 ? (i = (i * 10) / 10) : null;
   }
   let arr = [...days[0].hour, ...days[1].hour];
 

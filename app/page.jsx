@@ -13,7 +13,7 @@ export default function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (location === "") {
+    if (location == null) {
       dispatch(GetLocation());
     }
   }, [dispatch, location]);
@@ -26,7 +26,7 @@ export default function Home() {
         </>
       ) : isLoading ? (
         <>Loading...</>
-      ) : location !== "" ? (
+      ) : location !== null ? (
         <>
           <Weather />
         </>
