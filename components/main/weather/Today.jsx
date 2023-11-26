@@ -9,7 +9,9 @@ function Today({ weather, temperature }) {
   return (
     <div className="bg-[#202C3C] rounded-2xl p-6">
       <div>
-        <h1>{location.name}</h1>
+        <h1>
+          {location.name}, {current.country}
+        </h1>
         <p>{current.temp_c}</p>
         <p>
           {getByUnit(current, temperature, temp)}
@@ -18,12 +20,20 @@ function Today({ weather, temperature }) {
       </div>
       <div>
         <Image
+          src="/logo.png"
+          width={150}
+          height={150}
+          alt="Picture of the author"
+        />
+      </div>
+      {/* <div>
+        <Image
           src={`http:${current.condition.icon}`}
           width={200}
           height={200}
           alt="Picture of the author"
         />
-      </div>
+      </div> */}
     </div>
   );
 }
