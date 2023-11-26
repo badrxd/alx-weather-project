@@ -10,9 +10,8 @@ function Today({ weather, temperature }) {
     <div className="bg-[#202C3C] rounded-2xl p-6">
       <div>
         <h1>
-          {location.name}, {current.country}
+          {location.name}, {location.country}
         </h1>
-        <p>{current.temp_c}</p>
         <p>
           {getByUnit(current, temperature, temp)}
           {temperature[temp].symbole}
