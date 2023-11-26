@@ -18,8 +18,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  /* background: rgb(var(--background-start-rgb)); */
-  background-color: white;
+  background: rgb(var(--background-start-rgb));
+  /* background-color: white; */
   min-height: 100vh;
   width: 100%;
   /* padding: 3% 3%; */
@@ -34,4 +34,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+main {
+  max-width: 1400px;
 }
