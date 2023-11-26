@@ -7,32 +7,25 @@ function Today({ weather, temperature }) {
   const { location, current } = weather;
   const { temp } = useSelector((store) => store.settings);
   return (
-    <div className="bg-[#202C3C] rounded-2xl p-6">
-      <div>
-        <h1>
-          {location.name}, {location.country}
+    <div className="rounded-2xl p-6 flex justify-between items-start">
+      <div className="flex flex-col justify-between items-start gap-20">
+        <h1 className="text-2xl font-bold flex flex-col justify-center items-start">
+          <span>{location.name}</span>
+          <span className="text-[#7e8894] text-sm">{location.country}</span>
         </h1>
-        <p>
+        <p className="text-4xl font-bold">
           {getByUnit(current, temperature, temp)}
           {temperature[temp].symbole}
         </p>
       </div>
       <div>
         <Image
-          src="/logo.png"
-          width={150}
-          height={150}
-          alt="Picture of the author"
-        />
-      </div>
-      {/* <div>
-        <Image
           src={`http:${current.condition.icon}`}
           width={200}
           height={200}
           alt="Picture of the author"
         />
-      </div> */}
+      </div>
     </div>
   );
 }
