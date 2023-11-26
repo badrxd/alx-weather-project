@@ -11,8 +11,8 @@ function Main() {
   const { weather } = useSelector((store) => store.weather);
   useEffect(() => {}, [weather]);
   return (
-    <div>
-      <div>
+    <div className="flex gap-5">
+      <div className=" bg-[#202C3C] w-4/6 rounded-2xl p-6">
         <Today />
         <TodayForecast temperature={temperature} weather={weather} />
         <AirCondition
@@ -20,7 +20,7 @@ function Main() {
           windSpeed={windSpeed}
         />
       </div>
-      <div>
+      <div className=" bg-[#202C3C] w-2/6 rounded-2xl p-6">
         <DaysForecast
           temperature={temperature}
           forecastday={weather.forecast.forecastday}

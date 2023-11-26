@@ -11,21 +11,28 @@ function Search() {
     dispatch(change(city));
   };
   return (
-    <div>
+    <div className="bg-[#202C3C] rounded-2xl">
       <form
+        className="flex justify-start items-center"
         onSubmit={(e) => {
           submet(e);
         }}
       >
-        <label htmlFor="">city</label>
         <input
+          className="p-3 w-full bg-[#202C3C] rounded-2xl focus:outline-none"
           type="text"
+          placeholder="City"
           onChange={(e) => {
             SetCity(e.target.value);
             console.log(city);
           }}
         />
-        <button type="submet">Submet</button>
+        <button
+          className="mx-3 bg-sky-500 hover:bg-sky-700 py-1 px-4 rounded-full"
+          type="submet"
+        >
+          Search
+        </button>
       </form>
     </div>
   );

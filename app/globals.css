@@ -18,9 +18,14 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  /* background: rgb(var(--background-start-rgb)); */
+  background-color: white;
   min-height: 100vh;
   width: 100%;
+  /* padding: 3% 3%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-loading {

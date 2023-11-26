@@ -11,21 +11,26 @@ function DaysForecast({ temperature, forecastday }) {
       <div>
         <h2>7-days Forecast</h2>
       </div>
-      <div>
+      <div className="my-4">
         {forecastday.map((e, i) => {
           return (
-            <div key={i}>
-              <h3>{i == 0 ? "Today" : getDay(e.date_epoch)}</h3>
-              <div>
+            <div
+              className="flex justify-between items-center border-b border-[#0B131F]"
+              key={i}
+            >
+              <h3 className="w-1/4">
+                {i == 0 ? "Today" : getDay(e.date_epoch)}
+              </h3>
+              <div className="flex justify-center items-center w-2/4">
                 <Image
                   src={`http:${e.day.condition.icon}`}
-                  width={70}
-                  height={70}
+                  width={50}
+                  height={50}
                   alt={e.day.condition.text}
                 />
                 <p>{e.day.condition.text}</p>
               </div>
-              <p>
+              <p className="w-1/4">
                 {getByUnit(e.day, temperature, temp, 1)}
                 <span>/{getByUnit(e.day, temperature, temp, 2)}</span>
               </p>

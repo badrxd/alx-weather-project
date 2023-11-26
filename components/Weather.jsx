@@ -20,9 +20,9 @@ function Weather() {
     dispatch(GetWeather(location));
   }, [dispatch, location]);
   return (
-    <>
+    <div className="flex flex-row justify-between w-full items-start gap-5">
       <NavBar />
-      <div>
+      <div className=" w-11/12 flex flex-col gap-5">
         <Search />
         {isError ? (
           ""
@@ -35,7 +35,7 @@ function Weather() {
           </>
         ) : null}
       </div>
-    </>
+    </div>
   );
 }
 
