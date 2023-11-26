@@ -15,7 +15,7 @@ function DaysForecast({ temperature, forecastday }) {
         {forecastday.map((e, i) => {
           return (
             <div
-              className="flex justify-between items-center border-b border-[#0B131F]"
+              className="flex justify-between items-center border-b border-[#0B131F] mb-2"
               key={i}
             >
               <h3 className="w-1/4">

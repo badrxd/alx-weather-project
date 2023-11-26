@@ -33,7 +33,7 @@ const getHours = (timeZone, days) => {
   for (let index = i; index < arr.length; index++) {
     hours.push(arr[index]);
     counter += 1;
-    if (counter == 24) {
+    if (counter == 6) {
       break;
     }
   }

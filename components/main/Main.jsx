@@ -12,7 +12,7 @@ function Main() {
   useEffect(() => {}, [weather]);
   return (
     <div className="flex gap-5">
-      <div className=" bg-[#202C3C] w-4/6 rounded-2xl p-6">
+      <div className="w-4/6 rounded-2xl p-6 flex flex-col gap-5">
         <Today />
         <TodayForecast temperature={temperature} weather={weather} />
         <AirCondition

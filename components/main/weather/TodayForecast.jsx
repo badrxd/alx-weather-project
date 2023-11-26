@@ -8,9 +8,9 @@ function TodayForecast({ temperature, weather }) {
   const { location, forecast } = weather;
   let hours = getHours(location.tz_id, forecast.forecastday);
   return (
-    <div>
+    <div className="bg-[#202C3C] rounded-2xl p-6">
       <h2>TodayForecast</h2>
-      <div>
+      <div className="flex justify-between items-center">
         {hours.map((e, i) => {
           return (
             <div key={i}>
