@@ -3,12 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { change } from "@/redux/features/location";
 
 function Search() {
-  const [city, SetCity] = useState();
+  const [city, SetCity] = useState("");
   const dispatch = useDispatch();
 
   const submet = (e) => {
     e.preventDefault();
-    dispatch(change(city));
+    {
+      city.length > 2 ? dispatch(change(city)) : null;
+    }
   };
   return (
     <div className="bg-[#202C3C] rounded-2xl">

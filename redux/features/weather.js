@@ -14,9 +14,14 @@ export const GetWeather = createAsyncThunk(
   "weather/all",
   // args: the city
   async (args, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/${args}`);
       let weather = await res.json();
+      if (weather?.error) {
+        return rejectWithValue({ error: true });
+      }
+      console.log(weather);
       return weather;
     } catch (error) {
       console.log(error.message);
@@ -40,8 +45,14 @@ const weatherSlice = createSlice({
     builder.addCase(GetWeather.fulfilled, (state, action) => {
       state.weather = action.payload;
       state.isLoading = false;
+      state.isError = false;
     });
-    builder.addCase(GetWeather.rejected, (state, action) => {});
+    builder.addCase(GetWeather.rejected, (state, action) => {
+      console.log("action");
+      console.log(action);
+      state.isLoading = false;
+      state.isError = true;
+    });
   },
 });
 
