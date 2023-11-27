@@ -17,9 +17,11 @@ function TodayForecast({ temperature, weather }) {
               <h3>{getHourMinute(e.time_epoch, location.tz_id)}</h3>
               <div>
                 <Image
-                  src={`http:${e.condition.icon}`}
-                  width={70}
-                  height={70}
+                  src={`/images/${e.is_day ? "day" : "night"}/${
+                    e.condition.text
+                  }.png`}
+                  width={30}
+                  height={30}
                   alt="Picture of the author"
                 />
               </div>

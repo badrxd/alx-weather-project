@@ -17,7 +17,7 @@ export const changeIndex = createSlice({
     i: the index
     type: pointer to the variable that i want to give him the index
     */
-    change: (state, action) => {
+    changeSettings: (state, action) => {
       const { i, type } = action.payload;
       console.log(i, type);
       {
@@ -27,6 +27,6 @@ export const changeIndex = createSlice({
   },
 });
 
-export const { change } = changeIndex.actions;
+export const { changeSettings } = changeIndex.actions;
 
 export default changeIndex.reducer;

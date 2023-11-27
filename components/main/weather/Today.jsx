@@ -20,9 +20,12 @@ function Today({ weather, temperature }) {
       </div>
       <div>
         <Image
-          src={`http:${current.condition.icon}`}
-          width={200}
-          height={200}
+          src={`/images/${current.is_day ? "day" : "night"}/${
+            current.condition.text
+          }.png`}
+          // src={`http:${current.condition.icon}`}
+          width={150}
+          height={150}
           alt="Picture of the author"
         />
       </div>

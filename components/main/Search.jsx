@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { change } from "@/redux/features/location";
+import { changeSettings } from "@/redux/features/settings";
 
+//
 function Search() {
   const [city, SetCity] = useState("");
   const dispatch = useDispatch();
 
   const submet = (e) => {
     e.preventDefault();
-    {
-      city.length > 2 ? dispatch(change(city)) : null;
+    if (city.length > 2) {
+      dispatch(change(city));
+      dispatch(changeSettings({ i: 0, type: "page" }));
     }
   };
   return (

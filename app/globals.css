@@ -38,3 +38,13 @@ body {
 main {
   max-width: 1400px;
 }
+.badr {
+  overflow-x: scroll;
+}
+.badr div {
+  min-width: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column !important;
+}

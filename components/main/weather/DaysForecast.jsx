@@ -20,9 +20,9 @@ function DaysForecast({ temperature, forecastday }) {
             <h3 className="w-1/4">{i == 0 ? "Today" : getDay(e.date_epoch)}</h3>
             <div className="flex justify-center items-center w-2/4">
               <Image
-                src={`http:${e.day.condition.icon}`}
-                width={50}
-                height={50}
+                src={`/images/day/${e.day.condition.text}.png`}
+                width={30}
+                height={30}
                 alt={e.day.condition.text}
               />
               <p>{e.day.condition.text}</p>
