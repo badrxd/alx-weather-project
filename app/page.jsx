@@ -19,7 +19,7 @@ export default function Home() {
   }, [dispatch, location]);
 
   return (
-    <main className="flex flex-col items-center h-screen justify-center w-full min-h-screen p-5 ">
+    <main className="flex bg-red-3000 flex-col items-center h-screen justify-center w-full min-h-screen p-5 ">
       {isError ? (
         <>
           <City />

@@ -20,7 +20,7 @@ function Weather() {
     dispatch(GetWeather(location));
   }, [dispatch, location]);
   return (
-    <div className="flex flex-row justify-between w-full h-screen items-start gap-5">
+    <div className="flex flex-row justify-between w-full items-start gap-5">
       <NavBar />
       <div className=" w-11/12 flex flex-col gap-5">
         <Search />

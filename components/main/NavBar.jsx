@@ -14,7 +14,7 @@ function NavBar() {
   };
 
   return (
-    <div className="bg-[#202C3C] w-1/12 h-screen rounded-2xl p-2 flex flex-col justify-start items-center">
+    <div className="bg-[#202C3C] w-1/12 h-full rounded-2xl p-2 flex flex-col justify-start items-center">
       <div>
         <Image src={logo} width={70} height={70} alt="logo image" />
       </div>
