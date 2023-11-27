@@ -1,6 +1,6 @@
 const getHourMinute = (timestamp, timeZone) => {
   const date = new Date(timestamp * 1000);
-
+  // test
   const options = {
     timeZone: timeZone,
     hour12: true,
@@ -41,15 +41,7 @@ const getHours = (timeZone, days) => {
 };
 const getDay = (timestamp) => {
   const date = new Date(timestamp * 1000);
-  const days = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
+  const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   const dayOfWeek = days[date.getDay()];
   return dayOfWeek;
 };

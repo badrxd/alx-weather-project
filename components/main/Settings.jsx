@@ -11,22 +11,22 @@ function Settings() {
   const genBtns = (arr, type) => {
     return arr.map((e, i) => {
       return (
-        <div key={i}>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 rounded"
+        <div key={i} className="w-1/2">
+          <div
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex justify-center items-center"
             onClick={() => {
               dispatch(changeSettings({ i: i, type: type }));
             }}
           >
             {e.name}
-          </button>
+          </div>
         </div>
       );
     });
   };
   return (
     <div className="flex flex-col justify-center gap-5">
-      <h2 className="font-bold text-2xl">Units</h2>
+      <h2 className="font-bold text-2xl text-[#fff]">Units</h2>
       <div className="bg-[#202C3C] rounded-2xl flex flex-col justify-center items-start p-6">
         {/* ------------------------------------------------------------------------------------------ */}
         <div className="w-full">

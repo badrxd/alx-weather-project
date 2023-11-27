@@ -9,54 +9,57 @@ function AirCondition({ day, windSpeed }) {
   const { windS } = useSelector((store) => store.settings);
   return (
     <div className="bg-[#202C3C] rounded-2xl p-4 px-10">
-      <div>
-        <h2>AirCondition</h2>
+      <div className="flex justify-between items-center">
+        <h2 className="uppercase">Air Condition</h2>
+        <button className=" bg-sky-500 text-sm hover:bg-sky-700 py-1 px-4 rounded-full">
+          See More
+        </button>
       </div>
-      <div className=" mt-4 flex justify-between items-center">
+      <div className=" mt-4 flex justify-center items-center">
         {/* part1 */}
-        <div className="flex flex-col justify-center items-start gap-5">
-          <div className="flex flex-col justify-center items-center">
-            <div className="flex justify-center items-center gap-2">
-              <span>
-                <WiHumidity className="text-4xl" />
-              </span>
-              <h3>humidity</h3>
+        <div className="flex flex-col justify-start items-start gap-5 w-1/2">
+          <div className="flex justify-center items-start gap-2">
+            <span>
+              <WiHumidity className="text-2xl" />
+            </span>
+            <div className="flex flex-col justify-center items-start gap-2">
+              <h3>Humidity</h3>
+              <p className="text-2xl font-bold">{day.avghumidity} %</p>
             </div>
-            <p className="text-2xl font-bold">{day.avghumidity} %</p>
           </div>
-          <div className="flex flex-col justify-center items-center">
-            <div className="flex justify-center items-center gap-2">
-              <span>
-                <PiWind className="text-4xl" />
-              </span>
-              <h3>wind</h3>
+          <div className="flex justify-center items-start gap-2">
+            <span>
+              <PiWind className="text-2xl" />
+            </span>
+            <div className="flex flex-col justify-center items-start gap-2">
+              <h3>Wind</h3>
+              <p className="text-2xl font-bold">
+                {getByUnit(day, windSpeed, windS)} {windSpeed[windS].name}
+              </p>
             </div>
-            <p className="text-2xl font-bold">
-              {getByUnit(day, windSpeed, windS)} {windSpeed[windS].name}
-            </p>
           </div>
         </div>
         {/* part1 */}
         {/* -------------------------------------------- */}
         {/* part2 */}
-        <div className="flex flex-col justify-center items-start gap-5">
-          <div className="flex flex-col justify-center items-center">
-            <div className="flex justify-center items-center gap-2">
-              <span>
-                <SiRainmeter className="text-4xl" />
-              </span>
-              <h3>chance of Rain</h3>
+        <div className="flex flex-col justify-center items-start gap-5 w-1/2">
+          <div className="flex justify-center items-start gap-2">
+            <span>
+              <SiRainmeter className="text-2xl" />
+            </span>
+            <div className="flex flex-col justify-center items-start gap-2">
+              <h3>Chance of Rain</h3>
+              <p className="text-2xl font-bold">{day.daily_chance_of_rain}%</p>
             </div>
-            <p className="text-2xl font-bold">{day.daily_chance_of_rain}%</p>
           </div>
-          <div className="flex flex-col justify-center items-center">
-            <div className="flex justify-center items-center gap-2">
-              <span>
-                <PiSunDimFill className="text-4xl" />
-              </span>
+          <div className="flex justify-center items-start gap-2">
+            <span>
+              <PiSunDimFill className="text-2xl" />
+            </span>
+            <div className="flex flex-col justify-center items-start gap-2">
               <h3>UV Index</h3>
+              <p className="text-2xl font-bold">{day.uv}</p>
             </div>
-            <p className="text-2xl font-bold">{day.uv}</p>
           </div>
         </div>
         {/* part2 */}
