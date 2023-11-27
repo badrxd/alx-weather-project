@@ -10,7 +10,7 @@ function Search() {
 
   const submet = (e) => {
     e.preventDefault();
-    if (city.length > 2) {
+    if (city.length > 0) {
       dispatch(change(city));
       dispatch(changeSettings({ i: 0, type: "page" }));
     }

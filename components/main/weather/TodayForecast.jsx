@@ -9,30 +9,35 @@ function TodayForecast({ temperature, weather }) {
   let hours = getHours(location.tz_id, forecast.forecastday);
   return (
     <div className="bg-[#202C3C] rounded-2xl p-4 px-10 mt-10">
-      <h2>TodayForecast</h2>
+      <h2>TODAY'S FORECAST</h2>
       <div className="flex mt-4 justify-between items-center">
         {hours.map((e, i) => {
           return (
-            <div
-              className=" border-r pr-3 border-[#6e7681] flex flex-col justify-center items-center"
-              key={i}
-            >
-              <h3>{getHourMinute(e.time_epoch, location.tz_id)}</h3>
-              <div className="my-2">
-                <Image
-                  src={`/images/${e.is_day ? "day" : "night"}/${
-                    e.condition.text
-                  }.png`}
-                  width={30}
-                  height={30}
-                  alt="Picture of the author"
-                />
+            <>
+              <div
+                className="flex flex-col justify-center w-80 items-center gap-2"
+                key={i}
+              >
+                <h3>{getHourMinute(e.time_epoch, location.tz_id)}</h3>
+                <div className="my-2">
+                  <Image
+                    src={`/images/${e.is_day ? "day" : "night"}/${
+                      e.condition.text
+                    }.png`}
+                    width={30}
+                    height={30}
+                    alt="Picture of the author"
+                  />
+                </div>
+                <p>
+                  {getByUnit(e, temperature, temp)}
+                  {temperature[temp].symbole}
+                </p>
               </div>
-              <p>
-                {getByUnit(e, temperature, temp)}
-                {temperature[temp].symbole}
-              </p>
-            </div>
+              {hours.length != i + 1 ? (
+                <hr className=" border-[#9097A2] w-60 rotate-90" />
+              ) : null}
+            </>
           );
         })}
       </div>

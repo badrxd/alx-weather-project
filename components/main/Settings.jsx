@@ -26,7 +26,7 @@ function Settings() {
   };
   return (
     <div className="flex flex-col justify-center gap-5">
-      <h2 className="font-bold text-2xl">Units</h2>
+      <h2 className="font-bold text-2xl text-[#fff]">Units</h2>
       <div className="bg-[#202C3C] rounded-2xl flex flex-col justify-center items-start p-6">
         {/* ------------------------------------------------------------------------------------------ */}
         <div className="w-full">

@@ -10,7 +10,7 @@ function AirCondition({ day, windSpeed }) {
   return (
     <div className="bg-[#202C3C] rounded-2xl p-4 px-10">
       <div>
-        <h2>AirCondition</h2>
+        <h2 className="uppercase">Air Condition</h2>
       </div>
       <div className=" mt-4 flex justify-between items-center">
         {/* part1 */}
