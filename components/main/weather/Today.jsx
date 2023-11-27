@@ -9,11 +9,11 @@ function Today({ weather, temperature }) {
   return (
     <div className="rounded-2xl flex justify-between items-start px-10 py-6">
       <div className="flex flex-col justify-between items-start h-full">
-        <h1 className="text-3xl font-bold flex flex-col justify-center items-start">
+        <h1 className="text-2xl font-bold flex flex-col justify-center items-start">
           <span className="text-[#ffffff]">{location.name}</span>
           <span className="text-[#7e8894] text-sm">{location.country}</span>
         </h1>
-        <p className="text-5xl text-[#ffffff] font-bold">
+        <p className="text-4xl text-[#ffffff] font-bold">
           {getByUnit(current, temperature, temp)}
           {temperature[temp].symbole}
         </p>
