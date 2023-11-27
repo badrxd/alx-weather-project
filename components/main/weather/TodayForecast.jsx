@@ -8,14 +8,17 @@ function TodayForecast({ temperature, weather }) {
   const { location, forecast } = weather;
   let hours = getHours(location.tz_id, forecast.forecastday);
   return (
-    <div className="bg-[#202C3C] rounded-2xl p-4 px-10">
+    <div className="bg-[#202C3C] rounded-2xl p-4 px-10 mt-10">
       <h2>TodayForecast</h2>
       <div className="flex mt-4 justify-between items-center">
         {hours.map((e, i) => {
           return (
-            <div className=" border-r pr-3 border-[#6e7681]" key={i}>
+            <div
+              className=" border-r pr-3 border-[#6e7681] flex flex-col justify-center items-center"
+              key={i}
+            >
               <h3>{getHourMinute(e.time_epoch, location.tz_id)}</h3>
-              <div>
+              <div className="my-2">
                 <Image
                   src={`/images/${e.is_day ? "day" : "night"}/${
                     e.condition.text
