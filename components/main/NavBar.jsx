@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { change } from "@/redux/features/settings";
+import { changeSettings } from "@/redux/features/settings";
 import Image from "next/image";
 import { FaCloudSunRain } from "react-icons/fa";
 import { VscSettings } from "react-icons/vsc";
@@ -10,7 +10,7 @@ function NavBar() {
   const dispatch = useDispatch();
 
   const ChangeSection = (i) => {
-    dispatch(change({ i: i, type: "page" }));
+    dispatch(changeSettings({ i: i, type: "page" }));
   };
 
   return (

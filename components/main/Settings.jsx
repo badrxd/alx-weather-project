@@ -1,7 +1,7 @@
 import React from "react";
 import settings from "@/settings.json";
 import { useSelector, useDispatch } from "react-redux";
-import { change } from "@/redux/features/settings";
+import { changeSettings } from "@/redux/features/settings";
 
 function Settings() {
   const { temp, pres, windS } = useSelector((store) => store.settings);
@@ -15,7 +15,7 @@ function Settings() {
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 rounded"
             onClick={() => {
-              dispatch(change({ i: i, type: type }));
+              dispatch(changeSettings({ i: i, type: type }));
             }}
           >
             {e.name}
