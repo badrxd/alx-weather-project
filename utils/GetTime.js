@@ -1,6 +1,6 @@
 const getHourMinute = (timestamp, timeZone) => {
   const date = new Date(timestamp * 1000);
-
+  // test
   const options = {
     timeZone: timeZone,
     hour12: true,
