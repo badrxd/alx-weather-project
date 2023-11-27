@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import settings from "@/settings.json";
 import { useSelector, useDispatch } from "react-redux";
 import { changeSettings } from "@/redux/features/settings";
@@ -8,12 +8,16 @@ function Settings() {
   const types = ["temp", "pres", "windS"];
   const dispatch = useDispatch();
 
-  const genBtns = (arr, type) => {
+  const styleCss =
+    "hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex justify-center items-center";
+  const color = "bg-blue-500 ";
+
+  const genBtns = (arr, type, index) => {
     return arr.map((e, i) => {
       return (
         <div key={i} className="w-1/2">
           <div
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex justify-center items-center"
+            className={`${i === index ? `${color}${styleCss}` : styleCss}`}
             onClick={() => {
               dispatch(changeSettings({ i: i, type: type }));
             }}
@@ -24,6 +28,7 @@ function Settings() {
       );
     });
   };
+  useEffect(() => {}, [temp, pres, windS]);
   return (
     <div className="flex flex-col justify-center gap-5">
       <h2 className="font-bold text-2xl text-[#fff]">Units</h2>
@@ -32,21 +37,21 @@ function Settings() {
         <div className="w-full">
           <h3 className="uppercase my-2">Temperature</h3>
           <dev className="bg-[#0B131F] flex justify-center items-center w-full gap-x-5 rounded-xl p-2">
-            {genBtns(settings.temperature, types[0])}
+            {genBtns(settings.temperature, types[0], temp)}
           </dev>
         </div>
         {/* ------------------------------------------------------------------------------------------ */}
         <div className="w-full">
           <h3 className="uppercase my-2">Pressure</h3>
           <div className="bg-[#0B131F] flex justify-center items-center w-full gap-x-5 rounded-xl p-2">
-            {genBtns(settings.pressure, types[1])}
+            {genBtns(settings.pressure, types[1], pres)}
           </div>
         </div>
         {/* ------------------------------------------------------------------------------------------ */}
         <div className="w-full">
           <h3 className="uppercase my-2">Wind Speed</h3>
           <div className="bg-[#0B131F] flex justify-center items-center w-full gap-x-5 rounded-xl p-2">
-            {genBtns(settings.windSpeed, types[2])}
+            {genBtns(settings.windSpeed, types[2], windS)}
           </div>
         </div>
       </div>

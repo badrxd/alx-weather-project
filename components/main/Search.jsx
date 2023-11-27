@@ -26,7 +26,7 @@ function Search() {
         <input
           className="p-3 w-full bg-[#202C3C] rounded-2xl focus:outline-none"
           type="text"
-          placeholder="City"
+          placeholder="Enter Your City"
           onChange={(e) => {
             SetCity(e.target.value);
             console.log(city);
