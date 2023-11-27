@@ -1,56 +1,38 @@
 {
-    "temperature": [
-        {
-            "name": "celsius",
-            "pointer": [
-                "temp_c",
-                "maxtemp_c",
-                "mintemp_c"
-            ],
-            "symbole": "°C"
-        },
-        {
-            "name": "fahrenheit",
-            "pointer": [
-                "temp_f",
-                "maxtemp_f",
-                "mintemp_f"
-            ],
-            "symbole": "°F"
-        }
-    ],
-    "pressure": [
-        {
-            "name": "mm",
-            "pointer": [
-                "precip_mm"
-            ]
-        },
-        {
-            "name": "mb",
-            "pointer": [
-                "pressure_in"
-            ]
-        },
-        {
-            "name": "inches",
-            "pointer": [
-                "precip_mm"
-            ]
-        }
-    ],
-    "windSpeed": [
-        {
-            "name": "km/h",
-            "pointer": [
-                "maxwind_kph"
-            ]
-        },
-        {
-            "name": "m/h",
-            "pointer": [
-                "maxwind_mph"
-            ]
-        }
-    ]
+  "temperature": [
+    {
+      "name": "Celsius",
+      "pointer": ["temp_c", "maxtemp_c", "mintemp_c"],
+      "symbole": "°C"
+    },
+    {
+      "name": "Fahrenheit",
+      "pointer": ["temp_f", "maxtemp_f", "mintemp_f"],
+      "symbole": "°F"
+    }
+  ],
+  "pressure": [
+    {
+      "name": "mm",
+      "pointer": ["precip_mm"]
+    },
+    {
+      "name": "mb",
+      "pointer": ["pressure_in"]
+    },
+    {
+      "name": "inches",
+      "pointer": ["precip_mm"]
+    }
+  ],
+  "windSpeed": [
+    {
+      "name": "km/h",
+      "pointer": ["maxwind_kph"]
+    },
+    {
+      "name": "m/h",
+      "pointer": ["maxwind_mph"]
+    }
+  ]
 }
