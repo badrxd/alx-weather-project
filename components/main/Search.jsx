@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { change } from "@/redux/features/location";
 import { changeSettings } from "@/redux/features/settings";
 
+//
 function Search() {
   const [city, SetCity] = useState("");
   const dispatch = useDispatch();
