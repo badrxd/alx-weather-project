@@ -8,7 +8,7 @@ function Today({ weather, temperature }) {
   const { temp } = useSelector((store) => store.settings);
   return (
     <div className="rounded-2xl p-6 flex justify-between items-start">
-      <div className="flex flex-col justify-between items-start gap-20">
+      <div className="flex flex-col justify-between items-start h-full">
         <h1 className="text-2xl font-bold flex flex-col justify-center items-start">
           <span>{location.name}</span>
           <span className="text-[#7e8894] text-sm">{location.country}</span>
