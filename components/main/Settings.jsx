@@ -15,14 +15,14 @@ function Settings() {
     return arr.map((e, i) => {
       return (
         <div key={i} className="w-1/2">
-          <button
+          <div
             className={`${i === index ? `${color}${styleCss}` : styleCss}`}
             onClick={() => {
               dispatch(changeSettings({ i: i, type: type }));
             }}
           >
             {e.name}
-          </button>
+          </div>
         </div>
       );
     });

@@ -7,7 +7,7 @@ import Image from "next/image";
 function DaysForecast({ temperature, forecastday }) {
   const { temp } = useSelector((store) => store.settings);
   return (
-    <div className="h-full flex flex-col justify-between">
+    <div className="h-full flex flex-col justify-between lg:gap-4 sm:gap-6">
       <div>
         <h2 className="uppercase">7-days Forecast</h2>
       </div>

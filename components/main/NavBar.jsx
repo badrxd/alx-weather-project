@@ -14,11 +14,11 @@ function NavBar() {
   };
 
   return (
-    <div className="bg-[#202C3C] w-1/12 h-full rounded-2xl p-2 flex flex-col justify-start items-center">
-      <div>
+    <div className="bg-[#202C3C] lg:min-h-[756px] lg:rounded-2xl p-2 flex lg:flex-col lg:justify-start sm:justify-center sm:h-14 sm:flex-row  sm:bg-[#202C3C] sm:drop-shadow-3xl lg:static sm:rounded-none sm:fixed sm:bottom-0 sm:z-50 sm:right-0 sm:left-0 items-center">
+      <div className="sm:hidden lg:block">
         <Image src={logo} width={70} height={70} alt="logo image" />
       </div>
-      <ul className="my-12 flex flex-col gap-7">
+      <ul className="my-12 flex lg:flex-col sm:flex-row sm:gap-12 lg:gap-7">
         <li>
           <button
             className="flex flex-col justify-center items-center"
@@ -27,7 +27,7 @@ function NavBar() {
             }}
           >
             <FaCloudSunRain className="text-2xl" />
-            Weather
+            <span className="sm:hidden lg:block">Weather</span>
           </button>
         </li>
         <li>
@@ -40,7 +40,7 @@ function NavBar() {
             <span>
               <VscSettings className="text-2xl" />
             </span>
-            Settings
+            <span className="sm:hidden lg:block">Settings</span>
           </button>
         </li>
       </ul>
