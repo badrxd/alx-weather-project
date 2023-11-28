@@ -9,7 +9,7 @@ const initialState = {
   location: null,
 };
 
-// the fetch function that bring to me the location
+// the fetch function that bring to me the location.
 export const GetLocation = createAsyncThunk(
   "location/city",
   async (args, thunkAPI) => {

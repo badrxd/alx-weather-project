@@ -24,7 +24,9 @@ function AirCondition({ day, windSpeed }) {
             </span>
             <div className="flex flex-col justify-center items-start gap-2">
               <h3>Humidity</h3>
-              <p className="text-2xl font-bold">{day.avghumidity} %</p>
+              <p className="text-2xl font-bold text-[#BDC5D1]">
+                {day.avghumidity}%
+              </p>
             </div>
           </div>
           <div className="flex justify-center items-start gap-2">
@@ -33,7 +35,7 @@ function AirCondition({ day, windSpeed }) {
             </span>
             <div className="flex flex-col justify-center items-start gap-2">
               <h3>Wind</h3>
-              <p className="text-2xl font-bold">
+              <p className="text-2xl font-bold text-[#BDC5D1]">
                 {getByUnit(day, windSpeed, windS)} {windSpeed[windS].name}
               </p>
             </div>
@@ -49,7 +51,9 @@ function AirCondition({ day, windSpeed }) {
             </span>
             <div className="flex flex-col justify-center items-start gap-2">
               <h3>Chance of Rain</h3>
-              <p className="text-2xl font-bold">{day.daily_chance_of_rain}%</p>
+              <p className="text-2xl font-bold text-[#BDC5D1]">
+                {day.daily_chance_of_rain}%
+              </p>
             </div>
           </div>
           <div className="flex justify-center items-start gap-2">
@@ -58,7 +62,7 @@ function AirCondition({ day, windSpeed }) {
             </span>
             <div className="flex flex-col justify-center items-start gap-2">
               <h3>UV Index</h3>
-              <p className="text-2xl font-bold">{day.uv}</p>
+              <p className="text-2xl font-bold text-[#BDC5D1]">{day.uv}</p>
             </div>
           </div>
         </div>

@@ -29,8 +29,8 @@ function TodayForecast({ temperature, weather }) {
                     alt="Picture of the author"
                   />
                 </div>
-                <p>
-                  {getByUnit(e, temperature, temp)}
+                <p className="text-[#BDC5D1] font-semibold text-xl">
+                  {parseInt(getByUnit(e, temperature, temp))}
                   {temperature[temp].symbole}
                 </p>
               </div>

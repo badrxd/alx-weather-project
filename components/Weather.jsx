@@ -25,7 +25,7 @@ function Weather() {
       <div className=" w-11/12 flex flex-col gap-5">
         <Search />
         {isError ? (
-          ""
+          "error"
         ) : isLoading ? (
           "Loading..."
         ) : weather !== null ? (

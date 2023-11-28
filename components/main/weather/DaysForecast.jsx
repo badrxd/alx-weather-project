@@ -26,14 +26,14 @@ function DaysForecast({ temperature, forecastday }) {
                   alt={e.day.condition.text}
                 />
               </div>
-              <div className="w-1/4 text-[#BDC5D1] text-bold">
+              <div className="w-1/4 text-[#BDC5D1] font-semibold">
                 <p>{e.day.condition.text}</p>
               </div>
               <p className="w-1/4">
-                <span className="text-[#BDC5D1] text-bold">
-                  {getByUnit(e.day, temperature, temp, 1)}
+                <span className="text-[#BDC5D1] font-semibold">
+                  {parseInt(getByUnit(e.day, temperature, temp, 1))}
                 </span>
-                <span>/{getByUnit(e.day, temperature, temp, 2)}</span>
+                <span>/{parseInt(getByUnit(e.day, temperature, temp, 2))}</span>
               </p>
             </div>
             {forecastday.length != i + 1 ? (
