@@ -1,12 +1,12 @@
 {
   "temperature": [
     {
-      "name": "Celsius",
+      "name": "celsius",
       "pointer": ["temp_c", "maxtemp_c", "mintemp_c"],
       "symbole": "°C"
     },
     {
-      "name": "Fahrenheit",
+      "name": "fahrenheit",
       "pointer": ["temp_f", "maxtemp_f", "mintemp_f"],
       "symbole": "°F"
     }

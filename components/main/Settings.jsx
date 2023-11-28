@@ -9,24 +9,26 @@ function Settings() {
   const dispatch = useDispatch();
 
   const genBtns = (arr, type) => {
+    const stylecss =
+      "w-full hover:bg-sky-500 text-white font-bold py-2 px-4 rounded flex justify-center items-center";
     return arr.map((e, i) => {
       return (
         <div key={i} className="w-1/2">
-          <div
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex justify-center items-center"
+          <button
+            className={`${stylecss}`}
             onClick={() => {
               dispatch(changeSettings({ i: i, type: type }));
             }}
           >
             {e.name}
-          </div>
+          </button>
         </div>
       );
     });
   };
   return (
     <div className="flex flex-col justify-center gap-5">
-      <h2 className="font-bold text-2xl text-[#fff]">Units</h2>
+      <h2 className="font-bold text-2xl text-[#fff] p-6">Units</h2>
       <div className="bg-[#202C3C] rounded-2xl flex flex-col justify-center items-start p-6">
         {/* ------------------------------------------------------------------------------------------ */}
         <div className="w-full">
