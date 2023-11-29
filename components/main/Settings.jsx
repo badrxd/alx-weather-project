@@ -8,21 +8,21 @@ function Settings() {
   const types = ["temp", "pres", "windS"];
   const dispatch = useDispatch();
   const styleCss =
-    "hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex justify-center items-center";
-  const color = "bg-blue-500 ";
+    "hover:bg-[#202C3C] active:bg-[#35455e] text-white font-bold py-2 px-4 rounded flex justify-center w-full items-center";
+  const color = "bg-[#35455e] ";
 
   const genBtns = (arr, type, index) => {
     return arr.map((e, i) => {
       return (
         <div key={i} className="w-1/2">
-          <div
+          <button
             className={`${i === index ? `${color}${styleCss}` : styleCss}`}
             onClick={() => {
               dispatch(changeSettings({ i: i, type: type }));
             }}
           >
             {e.name}
-          </div>
+          </button>
         </div>
       );
     });

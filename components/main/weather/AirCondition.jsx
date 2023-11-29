@@ -15,21 +15,21 @@ function AirCondition({ day, windSpeed }) {
           See More
         </button>
       </div>
-      <div className=" mt-4 flex justify-center items-center">
+      <div className=" mt-4 flex flex-col justify-center items-center gap-3">
         {/* part1 */}
-        <div className="flex flex-col justify-start items-start gap-5 w-1/2">
-          <div className="flex justify-center items-start gap-2">
+        <div className="flex justify-start items-start gap-5 w-full">
+          <div className="flex justify-start items-start gap-2 w-1/2">
             <span>
-              <WiHumidity className="text-2xl" />
+              <SiRainmeter className="text-2xl" />
             </span>
             <div className="flex flex-col justify-center items-start gap-2">
-              <h3>Humidity</h3>
+              <h3>Chance of Rain</h3>
               <p className="text-2xl font-bold text-[#BDC5D1]">
-                {day.avghumidity}%
+                {day.daily_chance_of_rain}%
               </p>
             </div>
           </div>
-          <div className="flex justify-center items-start gap-2">
+          <div className="flex justify-start items-start gap-2 w-1/2">
             <span>
               <PiWind className="text-2xl" />
             </span>
@@ -44,19 +44,19 @@ function AirCondition({ day, windSpeed }) {
         {/* part1 */}
         {/* -------------------------------------------- */}
         {/* part2 */}
-        <div className="flex flex-col justify-center items-start gap-5 w-1/2">
-          <div className="flex justify-center items-start gap-2">
+        <div className="flex  justify-center items-start gap-5 w-full">
+          <div className="flex justify-start items-start gap-2 w-1/2">
             <span>
-              <SiRainmeter className="text-2xl" />
+              <WiHumidity className="text-2xl" />
             </span>
             <div className="flex flex-col justify-center items-start gap-2">
-              <h3>Chance of Rain</h3>
+              <h3>Humidity</h3>
               <p className="text-2xl font-bold text-[#BDC5D1]">
-                {day.daily_chance_of_rain}%
+                {day.avghumidity}%
               </p>
             </div>
           </div>
-          <div className="flex justify-center items-start gap-2">
+          <div className="flex justify-start items-start gap-2 w-1/2">
             <span>
               <PiSunDimFill className="text-2xl" />
             </span>
