@@ -18,7 +18,7 @@ export const GetLocation = createAsyncThunk(
       console.log(args);
       const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api`, {
         method: "POST",
-        body: JSON.stringify(args),
+        body: JSON.stringify({ ip: args }),
       });
       const { location } = await res.json();
       console.log(location, "location");
