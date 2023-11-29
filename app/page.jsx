@@ -22,7 +22,8 @@ export default function Home() {
   };
   useEffect(() => {
     if (location == null && ip.ip !== null) {
-      dispatch(GetLocation(ip.ip));
+      let ip = ip.ip;
+      dispatch(GetLocation(ip ? ip : ""));
     }
   }, [dispatch, location, ip.ip]);
 

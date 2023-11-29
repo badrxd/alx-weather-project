@@ -14,7 +14,7 @@ export const GetIp = createAsyncThunk("ip/ip", async (args, thunkAPI) => {
   try {
     const res = await fetch(`https://api.ipify.org?format=json`);
     const ip = await res.json();
-    if (ip?.ip === undefined) {
+    if (!ip?.ip) {
       return rejectWithValue({ error: true });
     }
     return ip.ip;
