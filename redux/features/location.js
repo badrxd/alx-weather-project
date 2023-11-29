@@ -14,21 +14,19 @@ export const GetLocation = createAsyncThunk(
   "location/city",
   async (args, thunkAPI) => {
     try {
-      console.log(args, "args");
       console.log(args);
       const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api`, {
         method: "POST",
-        body: JSON.stringify({ ip: args }),
+        body: JSON.stringify(args),
       });
       const { location } = await res.json();
-      console.log(location, "location");
       if (location.status === "fail") {
-        return rejectWithValue({ error: location });
+        return rejectWithValue({ error: true });
       }
       return location;
     } catch (error) {
       console.log(error.message);
-      return rejectWithValue({ error: error });
+      return rejectWithValue({ error: true });
     }
   }
 );
