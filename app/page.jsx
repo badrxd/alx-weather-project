@@ -4,6 +4,7 @@ import Weather from "@/components/Weather";
 import City from "@/components/City";
 import { useSelector, useDispatch } from "react-redux";
 import { GetLocation } from "@/redux/features/location";
+import Loading from "@/app/loading";
 
 export default function Home() {
   let settings = useSelector((state) => state.settings);
@@ -25,7 +26,7 @@ export default function Home() {
           <City />
         </>
       ) : isLoading ? (
-        <>Loading...</>
+        <Loading />
       ) : location !== null ? (
         <>
           <Weather />

@@ -7,6 +7,7 @@ import Settings from "@/components/main/Settings";
 import Main from "@/components/main/Main";
 import { useSelector, useDispatch } from "react-redux";
 import { GetWeather } from "@/redux/features/weather";
+import Loading from "@/app/loading";
 
 function Weather() {
   let { location } = useSelector((state) => state.location);
@@ -27,7 +28,7 @@ function Weather() {
         {isError ? (
           "error"
         ) : isLoading ? (
-          "Loading..."
+          <Loading />
         ) : weather !== null ? (
           <>
             {page == 0 ? <Main /> : null}
