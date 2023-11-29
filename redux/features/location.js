@@ -23,12 +23,12 @@ export const GetLocation = createAsyncThunk(
       const { location } = await res.json();
       console.log(location, "location");
       if (location.status === "fail") {
-        return rejectWithValue({ error: true });
+        return rejectWithValue({ error: location });
       }
       return location;
     } catch (error) {
       console.log(error.message);
-      return rejectWithValue({ error: true });
+      return rejectWithValue({ error: error });
     }
   }
 );

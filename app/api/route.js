@@ -2,6 +2,7 @@ export async function POST(request) {
   try {
     let ip = "";
     ip = await request.json();
+    console.log(ip);
     const res = await fetch(`${process.env.LOCATION_URL}/${ip}`, {
       headers: {
         "Content-Type": "application/json",
@@ -11,7 +12,7 @@ export async function POST(request) {
     return Response.json({ location });
   } catch (error) {
     console.log(error.message);
-    return Response.json({ error: true });
+    return Response.json({ error: error });
   }
 }
 
