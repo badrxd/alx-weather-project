@@ -20,7 +20,7 @@ export const GetLocation = createAsyncThunk(
         body: JSON.stringify(args),
       });
       const { location } = await res.json();
-      if (location.status === "fail") {
+      if (location?.status === "fail") {
         return rejectWithValue({ error: true });
       }
       return location;

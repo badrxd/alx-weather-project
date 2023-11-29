@@ -18,7 +18,6 @@ export default function Home() {
   const dispatch = useDispatch();
 
   const first = async () => {
-    console.log("get ip");
     await dispatch(GetIp());
   };
   useEffect(() => {
