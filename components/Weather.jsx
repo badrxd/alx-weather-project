@@ -8,6 +8,7 @@ import Main from "@/components/main/Main";
 import { useSelector, useDispatch } from "react-redux";
 import { GetWeather } from "@/redux/features/weather";
 import Loading from "@/app/loading";
+import Error from "@/components/main/Error";
 
 function Weather() {
   let { location } = useSelector((state) => state.location);
@@ -26,15 +27,15 @@ function Weather() {
       <div className="flex flex-col gap-5 w-full lg:w-11/12">
         <Search />
         {isError ? (
-          "error"
+          page == 0 ? (
+            <Error />
+          ) : null
         ) : isLoading ? (
           <Loading />
         ) : weather !== null ? (
-          <>
-            {page == 0 ? <Main /> : null}
-            {page == 1 ? <Settings /> : null}
-          </>
+          <>{page == 0 ? <Main /> : null}</>
         ) : null}
+        {page == 1 ? <Settings /> : null}
       </div>
     </div>
   );
