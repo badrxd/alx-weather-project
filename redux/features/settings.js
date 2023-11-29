@@ -19,9 +19,8 @@ export const changeIndex = createSlice({
     */
     changeSettings: (state, action) => {
       const { i, type } = action.payload;
-      console.log(i, type);
       {
-        state[type] != i ? (state[type] = i) : console.log("didn't change");
+        state[type] != i ? (state[type] = i) : null;
       }
     },
     resetSettings: (state, action) => {

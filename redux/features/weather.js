@@ -21,7 +21,6 @@ export const GetWeather = createAsyncThunk(
       if (weather?.error) {
         return rejectWithValue({ error: true });
       }
-      console.log(weather);
       return weather;
     } catch (error) {
       console.log(error.message);
@@ -56,7 +55,6 @@ const weatherSlice = createSlice({
       state.isError = false;
     });
     builder.addCase(GetWeather.rejected, (state, action) => {
-      console.log("action");
       console.log(action);
       state.isLoading = false;
       state.isError = true;

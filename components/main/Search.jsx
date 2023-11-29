@@ -29,7 +29,6 @@ function Search() {
           placeholder="Enter Your City"
           onChange={(e) => {
             SetCity(e.target.value);
-            console.log(city);
           }}
         />
         <button
