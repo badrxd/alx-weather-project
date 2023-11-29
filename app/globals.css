@@ -49,3 +49,9 @@ main {
   justify-content: center;
   flex-direction: column !important;
 }
+.jawad {
+  overflow-x: scroll;
+}
+.jawad-2 {
+  min-width: 80px;
+}

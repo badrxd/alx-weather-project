@@ -10,12 +10,12 @@ function TodayForecast({ temperature, weather }) {
   return (
     <div className="bg-[#202C3C] rounded-2xl p-4 px-10 mt-10">
       <h2>TODAY&apos;S FORECAST</h2>
-      <div className="flex mt-4 justify-between items-center">
+      <div className="flex mt-4 justify-between items-center overflow-scroll">
         {hours.map((e, i) => {
           return (
             <>
               <div
-                className="flex flex-col justify-center w-80 items-center gap-2"
+                className="flex flex-col justify-center  items-center gap-2"
                 key={i}
               >
                 <h3>{getHourMinute(e.time_epoch, location.tz_id)}</h3>
@@ -35,7 +35,7 @@ function TodayForecast({ temperature, weather }) {
                 </p>
               </div>
               {hours.length != i + 1 ? (
-                <hr className=" border-[#9097A2] w-60 rotate-90" />
+                <hr className=" border-[#9097A2] min-w-[60px] rotate-90" />
               ) : null}
             </>
           );
