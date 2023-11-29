@@ -1,6 +1,8 @@
-export async function GET(request) {
+export async function POST(request) {
   try {
-    const res = await fetch(`${process.env.LOCATION_URL}`, {
+    let ip = "";
+    ip = await request.json();
+    const res = await fetch(`${process.env.LOCATION_URL}/${ip}`, {
       headers: {
         "Content-Type": "application/json",
       },

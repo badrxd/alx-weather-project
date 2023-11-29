@@ -6,7 +6,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   isSucces: false,
-  // location: null,
+  location: null,
 };
 
 // the fetch function that bring to me the location.
@@ -14,7 +14,11 @@ export const GetLocation = createAsyncThunk(
   "location/city",
   async (args, thunkAPI) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api`);
+      console.log(args);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api`, {
+        method: "POST",
+        body: JSON.stringify(args),
+      });
       const { location } = await res.json();
       if (location.status === "fail") {
         return rejectWithValue({ error: true });

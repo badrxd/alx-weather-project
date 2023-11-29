@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./features/settings";
 import locationSlice from "./features/location";
 import weatherSlice from "./features/weather";
+import IpSlice from "./features/ip";
 // import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 import thunk from "redux-thunk";
@@ -37,6 +38,7 @@ const rootReducer = combineReducers({
   settings: counterReducer,
   location: locationSlice,
   weather: weatherSlice,
+  ip: IpSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
