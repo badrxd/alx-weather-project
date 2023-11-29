@@ -6,7 +6,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   isSucces: false,
-  location: null,
+  // location: null,
 };
 
 // the fetch function that bring to me the location.
@@ -40,6 +40,12 @@ const locationSlice = createSlice({
       state.location = action.payload;
       state.isError = false;
     },
+    resetLocation: (state, action) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.isSucces = false;
+      state.location = null;
+    },
   },
   /*
     extraReducers : handel the 3 steps of the fetch loading , success and error
@@ -47,6 +53,7 @@ const locationSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(GetLocation.pending, (state, action) => {
       state.isLoading = true;
+      state.isError = false;
     });
     builder.addCase(GetLocation.fulfilled, (state, action) => {
       state.location = action.payload.city;
@@ -60,6 +67,6 @@ const locationSlice = createSlice({
   },
 });
 
-export const { change } = locationSlice.actions;
+export const { change, resetLocation } = locationSlice.actions;
 
 export default locationSlice.reducer;

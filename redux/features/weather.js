@@ -34,13 +34,21 @@ export const GetWeather = createAsyncThunk(
 const weatherSlice = createSlice({
   name: "weather",
   initialState,
-  reducers: {},
+  reducers: {
+    resetweather: (state, action) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.isSucces = false;
+      state.weather = null;
+    },
+  },
   /*
     extraReducers : handel the 3 steps of the fetch loading , success and error
     */
   extraReducers: (builder) => {
     builder.addCase(GetWeather.pending, (state, action) => {
       state.isLoading = true;
+      state.isError = false;
     });
     builder.addCase(GetWeather.fulfilled, (state, action) => {
       state.weather = action.payload;
@@ -56,6 +64,6 @@ const weatherSlice = createSlice({
   },
 });
 
-export const {} = weatherSlice.actions;
+export const { resetweather } = weatherSlice.actions;
 
 export default weatherSlice.reducer;

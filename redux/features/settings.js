@@ -24,6 +24,12 @@ export const changeIndex = createSlice({
         state[type] != i ? (state[type] = i) : console.log("didn't change");
       }
     },
+    resetSettings: (state, action) => {
+      state.temp = 0;
+      state.pres = 0;
+      state.windS = 0;
+      state.page = 0;
+    },
   },
 });
 
