@@ -18,12 +18,12 @@ export default function Home() {
   const dispatch = useDispatch();
 
   const first = async () => {
+    console.log("get ip");
     await dispatch(GetIp());
   };
   useEffect(() => {
     if (location == null && ip.ip !== null) {
-      let ip = ip.ip;
-      dispatch(GetLocation(ip ? ip : ""));
+      dispatch(GetLocation(ip.ip ? ip.ip : ""));
     }
   }, [dispatch, location, ip.ip]);
 
