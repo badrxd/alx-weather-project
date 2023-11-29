@@ -13,8 +13,8 @@ const initialState = {
 export const GetLocation = createAsyncThunk(
   "location/city",
   async (args, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
     try {
-      console.log(args);
       const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api`, {
         method: "POST",
         body: JSON.stringify(args),

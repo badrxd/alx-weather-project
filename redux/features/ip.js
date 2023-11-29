@@ -11,6 +11,7 @@ const initialState = {
 
 // the fetch function that bring to me the location.
 export const GetIp = createAsyncThunk("ip/ip", async (args, thunkAPI) => {
+  const { rejectWithValue } = thunkAPI;
   try {
     const res = await fetch(`https://api.ipify.org?format=json`);
     const ip = await res.json();
