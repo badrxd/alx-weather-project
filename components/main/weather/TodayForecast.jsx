@@ -10,7 +10,7 @@ function TodayForecast({ temperature, weather }) {
   return (
     <div className="bg-[#202C3C] rounded-2xl p-4 px-10 mt-10">
       <h2>TODAY&apos;S FORECAST</h2>
-      <div className="flex mt-4 justify-between items-center overflow-scroll">
+      <div className="flex mt-4 justify-between items-center overflow-x-scroll">
         {hours.map((e, i) => {
           return (
             <>

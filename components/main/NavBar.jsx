@@ -14,7 +14,7 @@ function NavBar() {
   };
 
   return (
-    <div className="bg-[#202C3C] lg:min-h-[756px] lg:rounded-2xl p-2 flex lg:flex-col lg:justify-start sm:justify-center sm:h-14 sm:flex-row  sm:bg-[#202C3C] sm:drop-shadow-3xl lg:static sm:rounded-none sm:fixed sm:bottom-0 sm:z-50 sm:right-0 sm:left-0 items-center">
+    <div className="lg:w-auto bg-[#202C3C] lg:min-h-[775px] lg:rounded-2xl p-2 flex lg:flex-col lg:justify-start sm:justify-center sm:h-14 sm:flex-row  sm:bg-[#202C3C] sm:drop-shadow-3xl lg:static sm:rounded-none sm:fixed sm:bottom-0 sm:z-50 sm:right-0 sm:left-0 items-center">
       <div className="sm:hidden lg:block">
         <Image src={logo} width={70} height={70} alt="logo image" />
       </div>
