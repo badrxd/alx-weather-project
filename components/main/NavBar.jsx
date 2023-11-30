@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeSettings } from "@/redux/features/settings";
 import Image from "next/image";
 import { FaCloudSunRain } from "react-icons/fa";
@@ -7,6 +7,7 @@ import { VscSettings } from "react-icons/vsc";
 
 import logo from "@/public/logo.png";
 function NavBar() {
+  const { page } = useSelector((store) => store.settings);
   const dispatch = useDispatch();
 
   const ChangeSection = (i) => {
@@ -19,9 +20,9 @@ function NavBar() {
         <Image src={logo} width={70} height={70} alt="logo image" />
       </div>
       <ul className="my-12 flex lg:flex-col sm:flex-row sm:gap-12 lg:gap-7">
-        <li>
+        <li className={page == 0 ? "text-white" : null}>
           <button
-            className="flex flex-col justify-center items-center"
+            className="flex flex-col justify-center items-center text-inherit"
             onClick={() => {
               ChangeSection(0);
             }}
@@ -30,9 +31,9 @@ function NavBar() {
             <span className="sm:hidden lg:block">Weather</span>
           </button>
         </li>
-        <li>
+        <li className={page == 1 ? "text-white" : null}>
           <button
-            className="flex flex-col justify-center items-center"
+            className="flex flex-col justify-center items-center text-inherit"
             onClick={() => {
               ChangeSection(1);
             }}
