@@ -6,6 +6,13 @@ Welcome to the AIO Weather Project! This project was developed by a dedicated te
 First, run the development server:
 
 - **Deployed Site:** [AIO Weather Project](#https://alx-weather-project.vercel.app/)
+- **Final Project Blog Article:** [Project Blog](#)
+
+- **Authors:**
+  - [Assoul Jaouad](#) <!-- Replace with author's LinkedIn profile -->
+  - [Badr Eddine Ouydir](#) <!-- Replace with author's LinkedIn profile -->
+  - [Omar Id Hmaid](#) <!-- Replace with author's LinkedIn profile -->
+
 
 ```bash
 npm run dev
