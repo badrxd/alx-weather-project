@@ -1,4 +1,8 @@
+# AIO Weather Project
 
+## Introduction
+
+Welcome to the AIO Weather Project! This project was developed by a dedicated team of individuals during the ALX curriculum. We aimed to create a comprehensive weather application that leverages APIs, HTTP requests, and state-of-the-art technologies to provide users with accurate and real-time weather information.
 First, run the development server:
 
 ```bash
