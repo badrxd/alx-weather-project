@@ -9,9 +9,9 @@ First, run the development server:
 - **Final Project Blog Article:** [Project Blog](#)
 
 - **Authors:**
-  - [Assoul Jaouad](#) <!-- Replace with author's LinkedIn profile -->
-  - [Badr Eddine Ouydir](#) <!-- Replace with author's LinkedIn profile -->
-  - [Omar Id Hmaid](#) <!-- Replace with author's LinkedIn profile -->
+  - [Assoul Jaouad](#)
+  - [Badr Eddine Ouydir](#https://www.linkedin.com/in/badr-eddine-oyudir/)
+  - [Omar Id Hmaid](#https://www.linkedin.com/in/omar-id-hmaid/)
 
 
 ```bash
