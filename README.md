@@ -1,6 +1,3 @@
-This is a AIO Weather project as portfiolio project
-
-## Getting Started
 
 First, run the development server:
 
