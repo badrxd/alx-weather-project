@@ -18,6 +18,7 @@ export const GetLocation = createAsyncThunk(
       const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api`, {
         method: "POST",
         body: JSON.stringify({ ip: args }),
+        headers : { 'Content-Type': 'application/json'}
       });
       const { location } = await res.json();
       if (location?.status === "fail") {
