@@ -7,11 +7,15 @@ export async function POST(request) {
       },
     });
     const location = await res.json();
-    return Response.json({ location });
+    if (location?.status === "fail") {
+      return Response.json({ error: true });
+    }
+    let city = location.city
+    return Response.json({ city: city });
   } catch (error) {
     console.log(error.message);
-    return Response.json({ error: error });
+    return Response.json({ error: true });
   }
 }
 
-async function create(data) {}
+async function create(data) { }
