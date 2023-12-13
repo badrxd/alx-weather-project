@@ -60,6 +60,27 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Challenges
+
+- **Technical challenges:**
+We faced a problem where lots of components in our App needed information from their main parts. Also, the way we found where a user 
+location is didn't work quite right—it was giving us the server's location instead of the user's location. Another issue was that when 
+someone refresh the page, all the information reset to the initial values, and we lost where the user was and their weather details...
+To fix these things, we made changes. First, we started using Redux Toolkit to help different parts of our program share information more 
+easily. It made passing around necessary details smoother between the different components. At the same time, we went into the code that 
+figures out where the user is and made some changes by adding another code on the client side to get its IP and pass it to the base code to 
+make sure it gives us the right location, not the server's location.
+This way, when someone reloads the page, the Data doesn't vanish anymore. It stays where it should be, like the user's location and the 
+weather for that location. Looking back, these changes not only made our program work better but also taught us the importance of tackling 
+problems from different angles for a solid solution.
+- **non-technical challenges:**
+One of the toughest challenges we faced wasn't about technical stuff but more about finding the right balance between work and life. It 
+wasn't just about managing time but figuring out how to handle our jobs, personal goals, and family commitments without feeling 
+overwhelmed.
+Trying to be successful in our ALX project while also chasing personal dreams made it feel like we were walking a tightrope. we had to learn 
+not just how to organize our time but also to decide what's most important and when to say 'no' to things that could add too much stress.
+Overcoming this challenges wasn't just about managing time better; it was about finding a way to live aligns with what we care about the 
+most. It taught us that success isn't just about work achievements but also about building a life that feels right for us.
 
 ## Contributing
 
