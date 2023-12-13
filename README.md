@@ -1,6 +1,6 @@
 # AIO Weather Project
 
-[![Watch the video](https://img.youtube.com/vi/oZv8s3NvaRcM3ZAb/hqdefault.jpg)](https://www.youtube.com/embed/oZv8s3NvaRcM3ZAb)
+[![Watch the video](https://img.youtube.com/vi/oZv8s3NvaRcM3ZAb/hqdefault.jpg)](https://www.youtube.com/embed/oZv8s3NvaRcM3ZA)
 
 
 ## Introduction
