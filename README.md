@@ -84,6 +84,9 @@ Trying to be successful in our ALX project while also chasing personal dreams ma
 not just how to organize our time but also to decide what's most important and when to say 'no' to things that could add too much stress.
 Overcoming this challenges wasn't just about managing time better; it was about finding a way to live aligns with what we care about the 
 most. It taught us that success isn't just about work achievements but also about building a life that feels right for us.
+## Blog article:
+
+[Linkedin Blog](https://www.linkedin.com/pulse/aio-weather-project-showcase-omar-id-hmaid-0xtcc)
 
 ## Contributing
 
