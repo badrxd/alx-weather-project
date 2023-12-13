@@ -13,6 +13,14 @@ First, run the development server:
   - [Badr Eddine Ouydir](https://www.linkedin.com/in/badr-eddine-oyudir/)
   - [Omar Id Hmaid](https://www.linkedin.com/in/omar-id-hmaid/)
 
+## Story
+
+As we went through the ALX curriculum, we learned about how APIs 
+work. When our project started, we thought about using what we 
+learned about APIs and HTTP requests. We found that a Weather API 
+is a popular and free option that we can use. We also realized that 
+mastering APIs and HTTP requests would be a good practice, so we 
+decided to include it in our project.
 
 ## Installation
 
